@@ -15,11 +15,11 @@
         android:layout_alignParentEnd="true"
         android:onClick="onAddTask" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter New Task"
-        android:id="@+id/tvNewTask"
+        android:hint="Enter New Task"
+        android:id="@+id/etNewTask"
         android:layout_alignTop="@+id/btnAddTask"
         android:layout_alignBottom="@+id/btnAddTask"
         android:layout_toLeftOf="@+id/btnAddTask"

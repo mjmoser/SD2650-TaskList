@@ -4,7 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,12 +33,29 @@ public class MainActivity extends ActionBarActivity {
         list .add("Thing one");
         list .add("Thing two");
         list .add("Thing three");
+
+        setupLongClickListener();
     }
 
-    public void onAddTask () {
-        TextView tvNewTask = (TextView)findViewById(R.id.tvNewTask);
-        String strNewTask = tvNewTask.getText().toString();
+    private void setupLongClickListener(){
+        listView.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                        list.remove(position);
+                        listAdapter.notifyDataSetChanged();
+                        return true;
+                    }
+                }
+
+        );
+    }
+
+    public void onAddTask (View v) {
+        EditText etNewTask = (EditText)findViewById(R.id.etNewTask);
+        String strNewTask = etNewTask.getText().toString();
         listAdapter.add(strNewTask);
+        etNewTask.setText("");
     }
 
     @Override
