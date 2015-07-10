@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
 
         listView.setAdapter(listAdapter);
-        list .add("Thing one");
+        list .add(" ");
         setupLongClickListener();
     }
 
@@ -49,16 +49,18 @@ public class MainActivity extends ActionBarActivity {
                         return true;
                     }
                 }
-
         );
     }
 
     public void onAddTask (View v) {
-        EditText etNewTask = (EditText)findViewById(R.id.etNewTask);
+        String etNewTask = (EditText)findViewById(R.id.etNewTask);
         String strNewTask = etNewTask.getText().toString();
         listAdapter.add(strNewTask);
+            if(etNewTask = "null";
+            switch (etNewTask = "Enter task");
         etNewTask.setText("");
         saveToFile();
+        }
     }
 
     private void saveToFile() {
