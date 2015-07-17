@@ -53,13 +53,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onAddTask (View v) {
-        String etNewTask = (EditText)findViewById(R.id.etNewTask);
+        EditText etNewTask = (EditText)findViewById(R.id.etNewTask);
         String strNewTask = etNewTask.getText().toString();
-        listAdapter.add(strNewTask);
-            if(etNewTask = "null";
-            switch (etNewTask = "Enter task");
-        etNewTask.setText("");
-        saveToFile();
+        if ( !strNewTask.isEmpty() ){
+            listAdapter.add(strNewTask);
+            etNewTask.setText("");
+            saveToFile();
         }
     }
 
